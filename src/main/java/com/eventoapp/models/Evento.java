@@ -22,7 +22,7 @@ public class Evento implements Serializable {
     private String nome;
     private String local;
 
-    @OneToMany
+    @OneToMany(mappedBy = "evento")
     private List<Convidado> convidados;
     
     public long getCodigo() {

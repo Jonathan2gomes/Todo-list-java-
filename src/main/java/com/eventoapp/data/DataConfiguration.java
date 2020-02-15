@@ -26,6 +26,7 @@ public class DataConfiguration {
         dataSource.setUrl("jdbc:mysql://localhost:3306/evento?useTimezone=true&serverTimezone=UTC");
         dataSource.setUsername("root");
         dataSource.setPassword("gomes");
+
         return dataSource;
     }
 
@@ -37,6 +38,7 @@ public class DataConfiguration {
         adapter.setGenerateDdl(true);
         adapter.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
         adapter.setPrepareConnection(true);
+
         return adapter;
     }
 }
