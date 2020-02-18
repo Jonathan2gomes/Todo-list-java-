@@ -21,7 +21,7 @@
             <p>Data: <span th:text="${evento.data}"</p>
             <p>Horário: <span th:text="${evento.horario}"</p>
         </div>
-
+            <th:block th:include="mensagemValidacao"></th:block>
 
         <form method="post">
             Nome: <input type="text" value="" name="nomeConvidado">

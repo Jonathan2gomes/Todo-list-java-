@@ -18,6 +18,8 @@
 <h3><a class="waves-effect waves-light btn" href="/eventos"><i class="material-icons left">add_circle_outline</i> Lista de Eventos </a> </h3>
 <form method="post" class="container">
 
+    <th:block th:include="mensagemValidacao"></th:block>
+
     Nome: <input type="text" value="" name="nome">
     <div class="row">
     <div class="input-field col s6">
