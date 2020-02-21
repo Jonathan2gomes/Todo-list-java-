@@ -18,9 +18,8 @@ public class Evento implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long codigo;
 
-    @NotEmpty
+
     private String data;
-    @NotEmpty
     private String horario;
     private String nome;
     private String local;
@@ -69,5 +68,5 @@ public class Evento implements Serializable {
         this.horario = horario;
     }
 
-    
+
 }

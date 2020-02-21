@@ -11,7 +11,7 @@ public class Convidado {
 
     @Id
     @NotEmpty
-    private Long rg;
+    private String rg;
 
     @NotEmpty
     private String nomeConvidado;
@@ -27,11 +27,11 @@ public class Convidado {
         this.evento = evento;
     }
 
-    public Long getRg() {
+    public String getRg() {
         return rg;
     }
 
-    public void setRg(Long rg) {
+    public void setRg(String rg) {
         this.rg = rg;
     }
 
