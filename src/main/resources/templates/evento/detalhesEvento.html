@@ -8,40 +8,51 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/style.css">
     <title>Title</title>
 </head>
 <body>
-<h1>Evento </h1>
-<h3><a class="waves-effect waves-light btn" href="/eventos"><i class="material-icons left">add_circle_outline</i>Lista de Eventos </a> </h3>
-    <div th:each="evento : ${evento}" class="container">
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Evento</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a class="waves-effect waves-light btn" href="/eventos"><i class="material-icons left">add_circle_outline</i>Lista de Eventos</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+    <div th:each="evento : ${evento}" class="container detalhesEvento">
         <div class="row">
             <p>Nome: <span th:text="${evento.nome}"</p>
             <p>Local: <span th:text="${evento.local}"</p>
             <p>Data: <span th:text="${evento.data}"</p>
-            <p>Horário: <span th:text="${evento.horario}"</p>
+            <p>Horário: <span th:time="${evento.horario}"</p>
         </div>
             <th:block th:include="mensagemValidacao"></th:block>
-
+    </div>
         <form method="post">
             Nome: <input type="text" value="" name="nomeConvidado">
             RG: <input type="text" value="" name="rg">
             <button type="submit" class="waves-effect waves-light btn">Adicionar</button>
 
         </form>
-    </div>
-<h5>Lista Convidados: </h5>
-    <div class="container" th:each="convidado: ${convidados}">
 
-        <div class="row">
-        <div class="input-field col s6">
-        <p><span th:text="${convidado.nomeConvidado}"</p>
-        </div>
-            <div class="input-field col s3">
-        <p><span th:text="${convidado.rg}"</p>
-            </div>
-        </div>
-    </div>
+
+    <table class="container">
+        <thead>
+                <th>Nome Convidado </th>
+                <th>RG</th>
+        </thead>
+        <tbody>
+        <tr th:each="convidado: ${convidados}">
+            <td><span th:text="${convidado.nomeConvidado}"></span> </td>
+            <td><span th:text="${convidado.rg}"></span> </td>
+        </tr>
+        </tbody>
+    </table>
 
 
 
