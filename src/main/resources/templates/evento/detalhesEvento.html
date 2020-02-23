@@ -25,6 +25,7 @@
     </nav>
 </header>
     <div th:each="evento : ${evento}" class="container detalhesEvento">
+        <h5>Detalhes do Evento</h5>
         <div class="row">
             <p>Nome: <span th:text="${evento.nome}"</p>
             <p>Local: <span th:text="${evento.local}"</p>
@@ -33,15 +34,17 @@
         </div>
             <th:block th:include="mensagemValidacao"></th:block>
     </div>
+<div class="container formConvidado">
         <form method="post">
             Nome: <input type="text" value="" name="nomeConvidado">
             RG: <input type="text" value="" name="rg">
             <button type="submit" class="waves-effect waves-light btn">Adicionar</button>
 
         </form>
+</div>
 
 
-    <table class="container">
+    <table class="container tabelaConvidado">
         <thead>
                 <th>Nome Convidado </th>
                 <th>RG</th>
