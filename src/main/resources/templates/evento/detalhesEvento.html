@@ -27,10 +27,11 @@
     <div th:each="evento : ${evento}" class="container detalhesEvento">
         <h5>Detalhes do Evento</h5>
         <div class="row">
-            <p>Nome: <span th:text="${evento.nome}"</p>
-            <p>Local: <span th:text="${evento.local}"</p>
-            <p>Data: <span th:text="${evento.data}"</p>
-            <p>Horário: <span th:time="${evento.horario}"</p>
+            <p>Nome: <span th:text="${evento.nome}"></span></p>
+            <p>Local: <span th:text="${evento.local}"></span></p>
+            <p>Data: <span th:text="${evento.data}"></span></p>
+            <p>Horário: <span th:time="${evento.horario}"></span></p>
+
         </div>
             <th:block th:include="mensagemValidacao"></th:block>
     </div>
@@ -48,11 +49,14 @@
         <thead>
                 <th>Nome Convidado </th>
                 <th>RG</th>
+                <th>Deletar</th>
         </thead>
         <tbody>
         <tr th:each="convidado: ${convidados}">
             <td><span th:text="${convidado.nomeConvidado}"></span> </td>
             <td><span th:text="${convidado.rg}"></span> </td>
+            <td><a th:href="@{/deletarConvidado(rg=${convidado.rg})}">
+                <i class="material-icons left">delete</i> </a></td>
         </tr>
         </tbody>
     </table>
