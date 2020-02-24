@@ -43,10 +43,11 @@
 <!--        <td><a th:href="@{/{codigo}(codigo=${evento.codigo})}">-->
             <span th:text="${evento.nome}"></span>
         </a></td>
-        <td><a><span th:text="${evento.local}"></a></span></td>
+        <td><a><span th:text="${evento.local}"></span></a></span></td>
         <td><a><span th:text="${evento.data}"></span></a></td>
         <td><a><span th:text="${evento.horario}"></span></a></td>
-        <td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}">
+        <td><a th:href="@{/deletar(codigo=${evento.codigo})}">
+<!--        <td><a class="waves-effect waves-light btn-small" th:href="${(#mvc.url('EC#deletarEvento').arg(0, evento.codigo)).build()}">-->
             <i class="material-icons left">delete</i>
         </a></td>
     </tr>
